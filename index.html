@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CeritaKita - Buku Cerita Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HALAMAN LOGIN -->
+<section id="loginPage" class="login-page">
+    <div class="login-box">
+        <div class="login-icon">📖</div>
+        <h1>Cerita<span>Kita</span></h1>
+        <p>Selamat datang di dunia cerita digital!</p>
+
+        <form id="loginForm">
+            <label>Nama Pengguna</label>
+            <input type="text" id="username"
+                placeholder="Masukkan nama kamu" required minlength="2">
+
+            <label>Kata Sandi</label>
+            <input type="password" id="password"
+                placeholder="Masukkan kata sandi" required minlength="4">
+
+            <button type="submit">Masuk Sekarang →</button>
+            <p id="loginMessage"></p>
+        </form>
+        <small>Website Buku Cerita Digital</small>
+    </div>
+</section>
+
+<!-- HALAMAN UTAMA -->
+<div id="mainWebsite" class="hidden">
+
+<header>
+    <h2>📚 Cerita<span>Kita</span></h2>
+
+    <button class="menu-button" id="menuButton">☰</button>
+
+    <nav id="navigation">
+        <button data-page="home">Beranda</button>
+        <button data-page="koleksi">Koleksi Cerita</button>
+        <button data-page="tentang">Tentang</button>
+    </nav>
+
+    <div class="header-right">
+        <span id="welcomeUser"></span>
+        <button id="darkMode">🌙</button>
+        <button id="logout">Keluar</button>
+    </div>
+</header>
+
+<main>
+
+<!-- BERANDA -->
+<section id="home" class="page">
+    <div class="hero">
+        <div>
+            <p class="tagline">SELAMAT DATANG DI CERITAKITA</p>
+            <h1>Temukan Dunia Baru<br>Melalui <span>Cerita</span></h1>
+            <p>
+                Nikmati berbagai cerita menarik mulai dari dongeng,
+                persahabatan, petualangan hingga cerita rakyat.
+                Setiap cerita memiliki pengalaman dan pesan moral
+                yang dapat dipelajari.
+            </p>
+            <button class="primary-button" data-go="koleksi">
+                Mulai Membaca →
+            </button>
+        </div>
+        <div class="hero-image">📚✨</div>
+    </div>
+
+    <h2 class="section-title">Cerita Pilihan</h2>
+    <div id="featuredStories" class="story-grid"></div>
+</section>
+
+<!-- KOLEKSI -->
+<section id="koleksi" class="page hidden">
+    <div class="page-title">
+        <p class="tagline">TEMUKAN CERITAMU</p>
+        <h1>Koleksi <span>Cerita</span></h1>
+        <p>Pilih cerita yang ingin kamu baca.</p>
+    </div>
+
+    <input type="search" id="search"
+        placeholder="Cari judul cerita...">
+
+    <div class="filters">
+        <button class="filter active" data-category="Semua">Semua</button>
+        <button class="filter" data-category="Dongeng">Dongeng</button>
+        <button class="filter" data-category="Persahabatan">Persahabatan</button>
+        <button class="filter" data-category="Petualangan">Petualangan</button>
+        <button class="filter" data-category="Cerita Rakyat">Cerita Rakyat</button>
+    </div>
+
+    <p id="storyCount"></p>
+    <div id="allStories" class="story-grid"></div>
+    <p id="emptyMessage" class="hidden">Cerita tidak ditemukan.</p>
+</section>
+
+<!-- TENTANG -->
+<section id="tentang" class="page hidden">
+    <div class="about">
+        <p class="tagline">TENTANG KAMI</p>
+        <h1>Mengenal <span>CeritaKita</span></h1>
+
+        <p>
+            CeritaKita merupakan website buku cerita digital
+            yang menyediakan berbagai macam bacaan menarik.
+            Website ini dibuat untuk memudahkan pengunjung
+            menikmati cerita secara online.
+        </p>
+
+        <div class="about-grid">
+            <div>
+                <h2>🎯 Tujuan</h2>
+                <p>Meningkatkan minat membaca melalui cerita digital
+                yang menarik dan mudah diakses.</p>
+            </div>
+
+            <div>
+                <h2>📚 Koleksi</h2>
+                <p>Menyediakan sepuluh cerita dengan kategori
+                dongeng, persahabatan, petualangan, dan cerita rakyat.</p>
+            </div>
+
+            <div>
+                <h2>💻 Teknologi</h2>
+                <p>Dibangun menggunakan HTML, CSS, dan JavaScript
+                tanpa menggunakan database.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <h2>📖 CeritaKita</h2>
+    <p>Temukan cerita, temukan inspirasi.</p>
+    <p>© 2026 CeritaKita</p>
+</footer>
+
+</div>
+
+<!-- PEMBACA CERITA -->
+<div id="reader" class="reader hidden">
+    <div class="reader-box">
+        <button id="closeReader" class="close">✕</button>
+        <p id="readerCategory" class="tagline"></p>
+        <h1 id="readerTitle"></h1>
+        <p id="readerDescription"></p>
+        <hr>
+        <article id="readerContent"></article>
+        <div class="moral">
+            <h3>🌷 Pesan Moral</h3>
+            <p id="readerMoral"></p>
+        </div>
+        <button id="backCollection" class="primary-button">
+            Kembali ke Koleksi
+        </button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
